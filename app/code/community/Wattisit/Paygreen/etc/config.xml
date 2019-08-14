@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Wattisit_Paygreen>
-			<version>0.1.0</version>
+			<version>0.1.1</version>
 			<codePool>community</codePool>
 			<depends>
                  <Mage_Payment />
@@ -111,7 +111,7 @@
             <paygreen>
                 <title>Paygreen</title>
                 <model>paygreen/paymentMethod</model>
-                <active>1</active>
+                <active>0</active>
                 <paiement_accepted>Votre paiement avec Paygreen a été accepté</paiement_accepted>
                 <paiement_refused>Votre paiement avec Paygreen n'a pas abouti</paiement_refused>
                 <paiement_cancelled>Votre paiement avec Paygreen a été annulé</paiement_cancelled>

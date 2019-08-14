@@ -40,7 +40,7 @@ const VERSION = '0.4B';
         self::RECURRING_BIANNUAL => '2 ans'
     );
 
-    private static $host = "http://local.paygreen.fr/paiement/new/";
+    private static $host = "https://paygreen.fr/paiement/new/";
 
     private $token;
     private $key;

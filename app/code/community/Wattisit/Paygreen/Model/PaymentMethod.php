@@ -8,9 +8,9 @@ class Wattisit_Paygreen_Model_PaymentMethod extends Mage_Payment_Model_Method_Ab
     protected $_infoBlockType = 'paygreen/info';
 
 
-    public function isAvailable($quote = null) {
+    /*public function isAvailable($quote = null) {
     	return true;
-    }
+    }*/
 
     public function assignData($data)
     {
