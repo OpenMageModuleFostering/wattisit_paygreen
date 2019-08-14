@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+  <paygreen_adminhtml_buttons_index>
+     <reference name="content">
+             <block type="paygreen/payment"  name="admin_buttons"
+                  template="paygreen/buttons.phtml" />
+      </reference>
+   </paygreen_adminhtml_buttons_index>
+</layout>

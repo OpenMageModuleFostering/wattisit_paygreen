@@ -1,0 +1,44 @@
+<?php 
+	$buttons = $this->getButtons();
+?><fieldset class="form-list paygreen-list">
+    <?php $_code=$this->getMethodCode() ?>
+    <ul id="payment_form_<?php echo $_code ?>" style="display:none">
+    <?php foreach($buttons as $i => $btn) : ?>
+		<li>
+		<label data-value="<?php echo $i ?>">
+			<input type="radio" value="<?php echo $btn->id ?>" name="payment[paygreen_btn]"<?php echo ($i == 1 ? ' checked="checked"' : '') ?> />
+			<img height="<?php echo $btn->height ?>" src="<?php echo $this->getIcons($btn->image) ?>" />
+			<h3><?php echo $btn->label; ?></h3>
+		</label>
+		</li>
+	<?php endforeach; ?>
+    </ul>
+</fieldset> 
+<style type="text/css">
+	.paygreen-list li input {
+		float:left;
+	} 
+	.paygreen-list li label {
+		display: block;
+	}
+	.paygreen-list li label input {
+		display:none;
+	}
+	.paygreen-list input[type="radio"]:checked+img+h3 { 
+		font-weight: bold; 
+	} 
+	.paygreen-list li label.active {
+		text-decoration: none;
+		font-weight: bold;
+	}
+	.paygreen-list li label img {
+		float:left;
+	}
+	.paygreen-list li label h3 {
+		line-height: <?php echo $btn->height ?>px;
+		font-weight: none;
+	}
+</style>
+<script type="text/javascript">
+	
+</script>

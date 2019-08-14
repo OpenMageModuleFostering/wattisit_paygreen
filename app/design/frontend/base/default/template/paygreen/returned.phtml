@@ -1,0 +1,15 @@
+<h2><?php echo $this->title(); ?></h2>
+<p><?php
+switch($this->paygreen->result['status']) {
+	case PaygreenClient::STATUS_REFUSED:
+		echo $this->refusedMessage();
+	break;
+	case PaygreenClient::STATUS_SUCCESSED:
+		echo $this->acceptedMessage();
+	break;
+	case PaygreenClient::STATUS_CANCELLING:
+		echo $this->cancelledMessage();
+	break;
+}
+?></p>
+<a href="<?php echo Mage::getUrl('sales/order/view', array('order_id' => $this->order->entity_id)); ?>">Voir votre commande</a>

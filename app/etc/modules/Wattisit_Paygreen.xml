@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+   <config>
+      <modules>
+        <Wattisit_Paygreen>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                 <Mage_Payment />
+             </depends>
+         </Wattisit_Paygreen>
+       </modules>
+    </config>

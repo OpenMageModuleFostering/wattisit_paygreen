@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <payment>
+            <groups>
+                <paygreen module="paygreen">
+                    <label>Paygreen</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment><![CDATA[Pour récupérer votre clée privée et identifiant unique, veuillez vous <a href="https://paygreen.fr/subscribe" target="_blank">inscrire sur Paygreen</a>]]></comment>
+                    <fields>
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <merchant_id module="paygreen">
+                            <label>Clé privée</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </merchant_id>
+                        <access_key>
+                            <label>Identifiant unique</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </access_key>
+                        <paiement_accepted>
+                            <label>Phrase lors d\'un paiement réussi</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </paiement_accepted>
+                        <paiement_refused>
+                            <label>Phrase lors d\'un paiement refusé</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </paiement_refused>
+                        <paiement_cancelled>
+                            <label>Phrase lors d\'un paiement refusé</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </paiement_cancelled>
+                        <authorized_order_status>
+                            <label>Statut d'acceptation</label>
+                            <comment>Statut de la commande après acceptation</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>paygreen/datasource_status</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </authorized_order_status>
+                        <failed_order_status>
+                            <label>Statut d'échec</label>
+                            <comment>Statut de la commande après un refus</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>paygreen/datasource_status</source_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </failed_order_status>
+                        <canceled_order_status>
+                            <label>Statut d'annulation</label>
+                            <comment>Statut de la commande après une annulation</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>paygreen/datasource_status</source_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </canceled_order_status>
+                        
+                    </fields>
+                </paygreen>
+            </groups>
+        </payment>
+    </sections>
+</config>

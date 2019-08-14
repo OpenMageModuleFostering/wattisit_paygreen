@@ -1,0 +1,16 @@
+<div style="text-align:center">	
+<form method="POST" id="paygreenForm" action="<?php echo $this->paygreen->getActionForm() ?>">
+<h3>Redirection en cours vers votre moyen de paiement</h3>
+	<button type="submit" >
+	<input type="hidden" name="platform" value="magento" />
+	<input type="hidden" name="data" value="<?php echo $this->paygreen->generateData() ?>" />
+	<img height="<?php echo $this->btn->height ?>" src="<?php echo $this->getIcons($this->btn->image) ?>" style="display: inline-block" />
+	</button><br />
+	si vous n'êtes pas rediriger, cliquez sur l'image ci-dessus
+</form>
+</div>
+<script type="text/javascript">
+    window.onload=function(){
+    	document.forms['paygreenForm'].submit()
+    }
+</script>

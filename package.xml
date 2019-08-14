@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+    <name>Wattisit_Paygreen</name>
+    <version>0.1.0</version>
+    <stability>stable</stability>
+    <license>GNU General Public License (GPL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>PayGreen vous permet d'accepter le paiement en carte bancaire sur votre boutique en ligne magento &#xD;
+</summary>
+    <description>Ce module de paiement vous permet de personnaliser votre page de paiement:&#xD;
+Votre page de paiement est &#xE0; vos couleurs&#xD;
+Organisez ponctuellement des op&#xE9;rations de collecte de dons (ARRONDI) pour les associations de votre choix&#xD;
+Activer/D&#xE9;sactiver le syst&#xE8;me 3D secure&#xD;
+Proposez un Abonnement &#xE0; vos clients&#xD;
+Faites payer vos clients par Mail&#xD;
+&#xD;
+Notre tarification est fonction de votre volume de vente mensuel :&#xD;
+&#xD;
+PayGreen est une des solutions les plus &#xE9;conomiques sur le march&#xE9;. Notre tarification s&amp;apos;adapte &#xE0; votre chiffre d&amp;apos;affaire et est personnalis&#xE9;e au del&#xE0; d&amp;apos;un certain volume de vente mensuel.</description>
+    <notes>Premi&#xE8;re version du module</notes>
+    <authors><author><name>Watt is it</name><user>WattIsIt</user><email>support@paygreen.fr</email></author></authors>
+    <date>2016-01-22</date>
+    <time>16:38:22</time>
+    <contents><target name="magecommunity"><dir name="Wattisit"><dir name="Paygreen"><dir name="Block"><file name="Form.php" hash="c486be7ad97297691e6b83d271aadcf7"/><file name="Info.php" hash="516fcaf040998026baa3644de0edf94d"/><file name="Monblock.php" hash="e0f1f98e9d71e8cb743917bfac5bd700"/><file name="Payment.php" hash="09efc37b621dd3e94e02d2db1baeef87"/></dir><dir name="Helper"><file name="Data.php" hash="550bfcf93e4ed09ab1be9cbaee44212e"/></dir><dir name="Model"><file name="Buttons.php" hash="8fbbf473861c83c3677f34f16c31e0b9"/><dir name="Datasource"><file name="Status.php" hash="3bea16c5e273efdf62ae94cb024f4aab"/></dir><dir name="Mysql4"><dir name="Buttons"><file name="Collection.php" hash="274ab664f0a7bd7f9a974ed8f5c73506"/></dir><file name="Buttons.php" hash="56e462ef52928299dd22966f25158dc7"/></dir><file name="PaymentMethod.php" hash="10de424a39f4d20f02304badd080e4da"/><dir name="Resource"><file name="Setup.php" hash="2494181127c400e52393c06f380ecdd7"/></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="ButtonsController.php" hash="41cb09f007ea5e6df1354e29189c8363"/><file name="IndexController.php" hash="a448ad93eadb4fcbaeed98d4df202c97"/></dir><file name="IndexController.php" hash="439e3259f8956dea927ae2b00642f1e4"/><file name="StaticController.php" hash="d56a70df2495e9b9764ef550b21b09b5"/></dir><dir name="etc"><file name="config.xml" hash="ff4b4268e0231b138b5134a2c34b55ca"/><file name="system.xml" hash="b2c9d7b05655c883fb00a75407ae8e31"/></dir><dir name="lib"><file name="PaygreenClient.php" hash="093207ee5be746d7ce1bead614e09dea"/><file name="PaygrenModuleUtils.php" hash="cf7f835b9467e40f4873ca34dd4595ac"/></dir><dir name="public"><dir name="icons"><file name="paiement.png" hash="c413cdb06f10d973a1a008d58df59825"/><file name="paygreen_paiement.png" hash="c413cdb06f10d973a1a008d58df59825"/></dir></dir><dir name="sql"><dir name="paygreen_setup"><file name="mysql4-install-0.1.0.php" hash="910ce8551b0b3dc9fa0171f82359859e"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Wattisit_Paygreen.xml" hash="b9300cc18cf27d2c4e73acc3dd393c9e"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="base"><dir name="default"><dir name="layout"><file name="paygreen.xml" hash="19079d4438a040b6b95a48cb651c50c3"/></dir><dir name="template"><dir name="paygreen"><file name="afficher.phtml" hash="76974630bce82ee2fc437957bc2d4bdc"/><file name="buttons.phtml" hash="b2c6264e4d99505080d7ef47247d58c0"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="paygreen.xml" hash="c935447e735eba2cf657543eaebffffb"/></dir><dir name="template"><dir name="paygreen"><file name="afficher.phtml" hash="9755e2421d8cfc5358d82f65bcb66352"/><file name="caller.phtml" hash="b6dfe497f7699290f6919398a240b7e6"/><file name="informations.phtml" hash="0048eedb8d2b01a432794e9b995744ad"/><file name="paiement.phtml" hash="fdd864256fc1147edbb902a78da8466a"/><file name="returned.phtml" hash="49d8bc37a8f79b38b464515a188c0ce5"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.0.0</min><max>5.5.0</max></php></required></dependencies>
+</package>

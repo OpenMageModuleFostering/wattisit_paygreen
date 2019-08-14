@@ -1,0 +1,17 @@
+{
+    "name": "OpenMageModuleFostering/Wattisit_Paygreen",
+    "type": "magento-module",
+    "license": "GNU-General-Public-License-(GPL)",
+    "homepage": "",
+    "description": "PayGreen vous permet d'accepter le paiement en carte bancaire sur votre boutique en ligne magento 
+",
+    "authors": [
+    {
+        "name": "Watt is it",
+        "email": "support@paygreen.fr"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

@@ -1,0 +1,132 @@
+<div class="content-header">
+	<table cellspacing="0">
+		<tr>
+			<td style="width:50%;"><h3 class="icon-head head-payment-method">Configuration des boutons de paiement</h3></td>
+			<td class="a-right">
+
+			</td>
+		</tr>
+	</table>
+</div>
+<style type="text/css">
+.help-block span {
+    display: block;
+    padding-left: 5px;
+    line-height: 28px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    color:#eb5e00;
+}
+.buttons {
+	padding-top:10px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+.button-bloc {
+	display: inline-block;
+	border-left:4px solid #dfdfdf;
+	padding:0 5px;
+}
+</style>
+<?php
+$buttons = $this->getAll()->load();
+
+$emptyItem = new Wattisit_Paygreen_Model_Buttons();
+$emptyItem->id = 0;
+
+$buttons->addItem($emptyItem);
+
+foreach($buttons as $btn):
+	?>
+<div id="formNewButton" class="button-bloc">
+	<form class="form-horizontal" action="<?php echo Mage::getUrl('adminpaygreen/adminhtml_buttons/save') ?>" method="post" enctype="multipart/form-data">
+		<input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>"  />
+		<input type="hidden" name="id" value="<?php echo $btn->id ?>">
+
+		<h4><?php if($btn->id > 0): ?>
+			<?php echo $btn->label; ?>
+		<?php else: ?>
+			Nouveau button
+		<?php endif ?></h4>
+
+		<fieldset>
+			<table cellspacing="0" class="form-list">
+				<tbody>
+
+					<tr>
+						<td class="label">
+							<label for="label">Libellé</label>
+						</td>
+						<td class="value">
+							<input id="label" name="label" type="text" placeholder="Libellé du bouton" class="input-text" required="required" value="<?php echo $btn->label ?>">
+						</td>
+						<td class="help-block"><span title="Texte affiché à droite de l'icône">?</span></td>
+					</tr>
+
+					<tr>
+						<td class="label">
+							<label for="image">Icône</label>
+						</td>
+						<td class="value">
+				    		<input id="image" name="image" class="input-file" type="file">
+						</td>
+					</tr>
+
+					<tr>
+						<td class="label">
+							<label for="image"> Image utilisée</label>
+						</td>
+						<td class="value">
+							<?php if($btn->image): ?>
+								<img src="<?php echo $this->getIcons($btn->image);?>" style="max-height:40px;" />
+							<?php else: ?>
+								<img src="<?php echo $this->getIcons('paygreen_paiement.png');?>" style="max-height:40px;" />
+							<?php endif; ?>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="label">
+							<label for="height">Hauteur de l'image</label>
+						</td>
+						<td class="value">
+				  			<input id="height" name="height" type="number" placeholder="" class="input-text" value="<?php echo $btn->height ?>">
+						</td>
+						<td class="help-block"><span title="Si vide, la taille de l'image sera celle réélle">?</span></td>
+					</tr>
+
+					<tr>
+						<td class="label">
+							<label for="position">N° position</label>
+						</td>
+						<td class="value">
+				  			<input id="position" name="position" type="number" placeholder="" class="input-text" value="<?php echo $btn->position ?>">
+						</td>
+						<td class="help-block"><span title="Si vide, sera calculé automatiquement">?</span></td>
+					</tr>
+
+					<tr >
+						<td colspan="3" class="buttons">
+						<?php if($btn->id > 0): ?>
+				  			<button id="resetBtn" name="submitPaygreenModuleButtonDelete" value="1" class="delete">
+				  				<span><span><span>Supprimer</span></span></span>
+				  			</button>
+				  		<?php else: ?>
+				    		<button id="resetBtn" name="resetBtn" type="reset" class="cancel">
+				    			<span><span><span>Annuler</span></span></span>
+				    		</button>
+				  		<?php endif ?>
+				    		<button id="validBtn" name="submitPaygreenModuleButton" value="1" class="save">
+				    		<span><span><span>Valider</span></span></span>
+				    		</button>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</fieldset>
+	</form>
+</div>
+<?php endforeach; ?>

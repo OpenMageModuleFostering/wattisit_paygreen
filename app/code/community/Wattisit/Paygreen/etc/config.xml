@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Wattisit_Paygreen>
+			<version>0.1.0</version>
+			<codePool>community</codePool>
+			<depends>
+                 <Mage_Payment />
+             </depends>
+		</Wattisit_Paygreen>
+	</modules>
+	<frontend>
+		<routers>
+			<paygreen>
+				<use>standard</use>
+				<args>
+					<module>Wattisit_Paygreen</module>
+					<frontName>paygreen</frontName>
+				</args>
+			</paygreen>
+		</routers>
+		<layout>
+			<updates>
+				<paygreen>
+					<file>paygreen.xml</file>
+				</paygreen>
+			</updates>
+		</layout>
+	</frontend>
+	<admin>
+		<routers>
+			<paygreen>
+				<use>admin</use>
+				<args>
+					<module>Wattisit_Paygreen</module>
+					<frontName>adminpaygreen</frontName>
+				</args>
+			</paygreen>
+		</routers>
+	</admin>
+	<adminhtml>
+		<layout>
+			<updates>
+				<paygreen>
+					<file>paygreen.xml</file>
+				</paygreen>
+			</updates>
+		</layout>
+		<menu>
+			<paygreen translate="title" module="adminhtml">
+				<title>Paygreen</title>
+				<sort_order>300</sort_order>
+				<children>
+					<set_time>
+						<title>Gestion des boutons</title>
+						<action>adminpaygreen/adminhtml_buttons</action>
+					</set_time>
+				</children>
+			</paygreen>
+		</menu>
+	</adminhtml>
+	<global>
+		<blocks>
+			<paygreen>
+				<class>Wattisit_Paygreen_Block</class>
+			</paygreen>
+		</blocks>
+		<models>
+			<paygreen>
+				<class>Wattisit_Paygreen_Model</class>
+				<resourceModel>paygreen_mysql4</resourceModel>
+			</paygreen>
+			<paygreen_mysql4>
+				<class>Wattisit_Paygreen_Model_Mysql4</class>
+				<entities>
+					<buttons>
+						<table>paygreen_buttons</table>
+					</buttons>
+				</entities>
+			</paygreen_mysql4>
+		</models>
+		<!-- permet au module de lire et ecrire -->
+		<resources>
+			<paygreen_setup>
+                <setup>
+                    <module>Wattisit_Paygreen</module>
+                    <class>Wattisit_Paygreen_Model_Resource_Setup</class>
+                </setup>
+            </paygreen_setup>
+			<!-- connection pour ecrire -->
+			<paygreen_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</paygreen_write>
+			<!-- connection pour lire-->
+			<paygreen_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</paygreen_read>
+		</resources>
+		<helpers>
+            <paygreen>
+                <class>Wattisit_Paygreen_Helper</class>
+            </paygreen>
+        </helpers>
+	</global>
+	 <default>
+        <payment>
+            <paygreen>
+                <title>Paygreen</title>
+                <model>paygreen/paymentMethod</model>
+                <active>1</active>
+                <paiement_accepted>Votre paiement avec Paygreen a été accepté</paiement_accepted>
+                <paiement_refused>Votre paiement avec Paygreen n'a pas abouti</paiement_refused>
+                <paiement_cancelled>Votre paiement avec Paygreen a été annulé</paiement_cancelled>
+                <failed_order_status>holded</failed_order_status>
+                <canceled_order_status>canceled</canceled_order_status>
+                <authorized_order_status>processing</authorized_order_status>
+            </paygreen>
+        </payment>
+    </default>
+</config>
